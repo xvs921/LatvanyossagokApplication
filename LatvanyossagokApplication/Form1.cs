@@ -23,6 +23,7 @@ namespace LatvanyossagokApplication
             conn.Open();
             tablaLetrehozas();
             VarosListazas();
+            LatvanyossagListazas();
         }
 
         public void tablaLetrehozas()
@@ -44,7 +45,17 @@ namespace LatvanyossagokApplication
                 cmd.CommandText = "INSERT INTO varosok(nev,lakossag) VALUES(@nev,@lakossag)";
                 cmd.Parameters.AddWithValue("@nev", textBoxNev.Text);
                 cmd.Parameters.AddWithValue("@lakossag", nudLakossag.Text);
-                int erintettSorokSzama = cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    if (ex.Number==1062)
+                    {
+                        MessageBox.Show("Már van ilyen város az adatbázisban");
+                    }
+                }
             }
             VarosListazas();
         }
@@ -81,6 +92,7 @@ namespace LatvanyossagokApplication
                     var lakossag = reader.GetInt32("lakossag");
                     var varos = new Varos(id, nev, lakossag);
                     listBoxVarosok.Items.Add(varos);
+                    comboBoxVarosok.Items.Add(varos);
                 }
 
             }
@@ -88,20 +100,31 @@ namespace LatvanyossagokApplication
 
         private void buttonVarosTorles_Click(object sender, EventArgs e)
         {
-            if (listBoxVarosok.SelectedIndex == -1)
-            {
-                MessageBox.Show("Nincs kiválasztott város");
-                return;
-            }
-            var cmd = conn.CreateCommand();
-            cmd.CommandText = "DELETE FROM varosok WHERE id=@id";
 
-            var varos = (Varos)listBoxVarosok.SelectedItem;
-            cmd.Parameters.AddWithValue("@id", varos.Id);
-
-            cmd.ExecuteNonQuery();
-
-            VarosListazas();
         }
+
+        void LatvanyossagListazas()
+        {
+            listBoxLatvanyossagok.Items.Clear();
+
+            var cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT id,nev,leiras,ar,varos_id FROM latvanyossagok ORDER BY nev";
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var id = reader.GetInt32("id");
+                    var nev = reader.GetString("nev");
+                    var leiras = reader.GetString("leiras");
+                    var ar = reader.GetInt32("ar");
+                    var varos_id = reader.GetInt32("varos_id");
+                    var latvanyossag = new Latvanyossag(id, nev, leiras,ar,varos_id);
+                    listBoxLatvanyossagok.Items.Add(latvanyossag);
+                }
+
+            }
+        }
+
+
     }
 }
