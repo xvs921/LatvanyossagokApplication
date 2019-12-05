@@ -41,37 +41,41 @@
             this.buttonVarosTorles = new System.Windows.Forms.Button();
             this.buttonLatvanyossagTorles = new System.Windows.Forms.Button();
             this.groupBoxVarosok = new System.Windows.Forms.GroupBox();
-            this.groupBoxLatvanyossagok = new System.Windows.Forms.GroupBox();
-            this.textBoxVarosNev = new System.Windows.Forms.TextBox();
-            this.nudVarosLakossag = new System.Windows.Forms.NumericUpDown();
             this.buttonVarosModosit = new System.Windows.Forms.Button();
-            this.textBoxNevModosit = new System.Windows.Forms.TextBox();
-            this.textBoxLeirasModosit = new System.Windows.Forms.TextBox();
-            this.nudLatvanyossagAr = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxVarosModosit = new System.Windows.Forms.ComboBox();
+            this.textBoxVarosNev = new System.Windows.Forms.TextBox();
+            this.groupBoxLatvanyossagok = new System.Windows.Forms.GroupBox();
             this.buttonLatvanyossagModositas = new System.Windows.Forms.Button();
+            this.nudLatvanyossagAr = new System.Windows.Forms.NumericUpDown();
+            this.textBoxLeirasModosit = new System.Windows.Forms.TextBox();
+            this.textBoxNevModosit = new System.Windows.Forms.TextBox();
             this.ButtonModositVarosok = new System.Windows.Forms.Button();
             this.buttonModositLatvanyossagok = new System.Windows.Forms.Button();
+            this.nudVarosLakossag = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudLakossag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAr)).BeginInit();
             this.groupBoxVarosok.SuspendLayout();
             this.groupBoxLatvanyossagok.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudVarosLakossag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLatvanyossagAr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVarosLakossag)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNev
             // 
             this.textBoxNev.Location = new System.Drawing.Point(30, 27);
             this.textBoxNev.Name = "textBoxNev";
-            this.textBoxNev.Size = new System.Drawing.Size(120, 20);
+            this.textBoxNev.Size = new System.Drawing.Size(120, 22);
             this.textBoxNev.TabIndex = 0;
             // 
             // nudLakossag
             // 
             this.nudLakossag.Location = new System.Drawing.Point(30, 67);
+            this.nudLakossag.Maximum = new decimal(new int[] {
+            80000000,
+            0,
+            0,
+            0});
             this.nudLakossag.Name = "nudLakossag";
-            this.nudLakossag.Size = new System.Drawing.Size(120, 20);
+            this.nudLakossag.Size = new System.Drawing.Size(120, 22);
             this.nudLakossag.TabIndex = 1;
             // 
             // btnVarosHozzaad
@@ -88,14 +92,19 @@
             // 
             this.textBoxLatvanyossagNev.Location = new System.Drawing.Point(195, 27);
             this.textBoxLatvanyossagNev.Name = "textBoxLatvanyossagNev";
-            this.textBoxLatvanyossagNev.Size = new System.Drawing.Size(120, 20);
+            this.textBoxLatvanyossagNev.Size = new System.Drawing.Size(120, 22);
             this.textBoxLatvanyossagNev.TabIndex = 3;
             // 
             // nudAr
             // 
             this.nudAr.Location = new System.Drawing.Point(195, 85);
+            this.nudAr.Maximum = new decimal(new int[] {
+            80000000,
+            0,
+            0,
+            0});
             this.nudAr.Name = "nudAr";
-            this.nudAr.Size = new System.Drawing.Size(120, 20);
+            this.nudAr.Size = new System.Drawing.Size(120, 22);
             this.nudAr.TabIndex = 4;
             // 
             // btnLatvanyossagHozzaad
@@ -113,30 +122,32 @@
             this.comboBoxVarosok.FormattingEnabled = true;
             this.comboBoxVarosok.Location = new System.Drawing.Point(195, 111);
             this.comboBoxVarosok.Name = "comboBoxVarosok";
-            this.comboBoxVarosok.Size = new System.Drawing.Size(120, 21);
+            this.comboBoxVarosok.Size = new System.Drawing.Size(120, 24);
             this.comboBoxVarosok.TabIndex = 6;
             // 
             // textBoxLatvanyossagAr
             // 
             this.textBoxLatvanyossagAr.Location = new System.Drawing.Point(195, 53);
             this.textBoxLatvanyossagAr.Name = "textBoxLatvanyossagAr";
-            this.textBoxLatvanyossagAr.Size = new System.Drawing.Size(120, 20);
+            this.textBoxLatvanyossagAr.Size = new System.Drawing.Size(120, 22);
             this.textBoxLatvanyossagAr.TabIndex = 7;
             // 
             // listBoxVarosok
             // 
             this.listBoxVarosok.FormattingEnabled = true;
+            this.listBoxVarosok.ItemHeight = 16;
             this.listBoxVarosok.Location = new System.Drawing.Point(380, 27);
             this.listBoxVarosok.Name = "listBoxVarosok";
-            this.listBoxVarosok.Size = new System.Drawing.Size(199, 160);
+            this.listBoxVarosok.Size = new System.Drawing.Size(199, 148);
             this.listBoxVarosok.TabIndex = 8;
             // 
             // listBoxLatvanyossagok
             // 
             this.listBoxLatvanyossagok.FormattingEnabled = true;
+            this.listBoxLatvanyossagok.ItemHeight = 16;
             this.listBoxLatvanyossagok.Location = new System.Drawing.Point(650, 27);
             this.listBoxLatvanyossagok.Name = "listBoxLatvanyossagok";
-            this.listBoxLatvanyossagok.Size = new System.Drawing.Size(199, 160);
+            this.listBoxLatvanyossagok.Size = new System.Drawing.Size(199, 148);
             this.listBoxLatvanyossagok.TabIndex = 9;
             // 
             // buttonVarosTorles
@@ -161,8 +172,8 @@
             // 
             // groupBoxVarosok
             // 
-            this.groupBoxVarosok.Controls.Add(this.buttonVarosModosit);
             this.groupBoxVarosok.Controls.Add(this.nudVarosLakossag);
+            this.groupBoxVarosok.Controls.Add(this.buttonVarosModosit);
             this.groupBoxVarosok.Controls.Add(this.textBoxVarosNev);
             this.groupBoxVarosok.Location = new System.Drawing.Point(30, 255);
             this.groupBoxVarosok.Name = "groupBoxVarosok";
@@ -171,37 +182,6 @@
             this.groupBoxVarosok.TabStop = false;
             this.groupBoxVarosok.Text = "Városok módosítása";
             this.groupBoxVarosok.Visible = false;
-            // 
-            // groupBoxLatvanyossagok
-            // 
-            this.groupBoxLatvanyossagok.Controls.Add(this.buttonLatvanyossagModositas);
-            this.groupBoxLatvanyossagok.Controls.Add(this.comboBoxVarosModosit);
-            this.groupBoxLatvanyossagok.Controls.Add(this.nudLatvanyossagAr);
-            this.groupBoxLatvanyossagok.Controls.Add(this.textBoxLeirasModosit);
-            this.groupBoxLatvanyossagok.Controls.Add(this.textBoxNevModosit);
-            this.groupBoxLatvanyossagok.Location = new System.Drawing.Point(446, 255);
-            this.groupBoxLatvanyossagok.Name = "groupBoxLatvanyossagok";
-            this.groupBoxLatvanyossagok.Size = new System.Drawing.Size(309, 168);
-            this.groupBoxLatvanyossagok.TabIndex = 13;
-            this.groupBoxLatvanyossagok.TabStop = false;
-            this.groupBoxLatvanyossagok.Text = "Látványosságok módosítása";
-            this.groupBoxLatvanyossagok.Visible = false;
-            // 
-            // textBoxVarosNev
-            // 
-            this.textBoxVarosNev.Location = new System.Drawing.Point(83, 19);
-            this.textBoxVarosNev.Name = "textBoxVarosNev";
-            this.textBoxVarosNev.Size = new System.Drawing.Size(120, 20);
-            this.textBoxVarosNev.TabIndex = 1;
-            this.textBoxVarosNev.Visible = false;
-            // 
-            // nudVarosLakossag
-            // 
-            this.nudVarosLakossag.Location = new System.Drawing.Point(83, 60);
-            this.nudVarosLakossag.Name = "nudVarosLakossag";
-            this.nudVarosLakossag.Size = new System.Drawing.Size(120, 20);
-            this.nudVarosLakossag.TabIndex = 14;
-            this.nudVarosLakossag.Visible = false;
             // 
             // buttonVarosModosit
             // 
@@ -212,49 +192,69 @@
             this.buttonVarosModosit.Text = "Módosítás";
             this.buttonVarosModosit.UseVisualStyleBackColor = true;
             this.buttonVarosModosit.Visible = false;
+            this.buttonVarosModosit.Click += new System.EventHandler(this.ButtonVarosModosit_Click);
             // 
-            // textBoxNevModosit
+            // textBoxVarosNev
             // 
-            this.textBoxNevModosit.Location = new System.Drawing.Point(88, 33);
-            this.textBoxNevModosit.Name = "textBoxNevModosit";
-            this.textBoxNevModosit.Size = new System.Drawing.Size(120, 20);
-            this.textBoxNevModosit.TabIndex = 4;
-            this.textBoxNevModosit.Visible = false;
+            this.textBoxVarosNev.Location = new System.Drawing.Point(83, 19);
+            this.textBoxVarosNev.Name = "textBoxVarosNev";
+            this.textBoxVarosNev.Size = new System.Drawing.Size(120, 22);
+            this.textBoxVarosNev.TabIndex = 1;
+            this.textBoxVarosNev.Visible = false;
             // 
-            // textBoxLeirasModosit
+            // groupBoxLatvanyossagok
             // 
-            this.textBoxLeirasModosit.Location = new System.Drawing.Point(88, 59);
-            this.textBoxLeirasModosit.Name = "textBoxLeirasModosit";
-            this.textBoxLeirasModosit.Size = new System.Drawing.Size(120, 20);
-            this.textBoxLeirasModosit.TabIndex = 8;
-            this.textBoxLeirasModosit.Visible = false;
-            // 
-            // nudLatvanyossagAr
-            // 
-            this.nudLatvanyossagAr.Location = new System.Drawing.Point(88, 86);
-            this.nudLatvanyossagAr.Name = "nudLatvanyossagAr";
-            this.nudLatvanyossagAr.Size = new System.Drawing.Size(120, 20);
-            this.nudLatvanyossagAr.TabIndex = 9;
-            this.nudLatvanyossagAr.Visible = false;
-            // 
-            // comboBoxVarosModosit
-            // 
-            this.comboBoxVarosModosit.FormattingEnabled = true;
-            this.comboBoxVarosModosit.Location = new System.Drawing.Point(88, 112);
-            this.comboBoxVarosModosit.Name = "comboBoxVarosModosit";
-            this.comboBoxVarosModosit.Size = new System.Drawing.Size(120, 21);
-            this.comboBoxVarosModosit.TabIndex = 10;
-            this.comboBoxVarosModosit.Visible = false;
+            this.groupBoxLatvanyossagok.Controls.Add(this.buttonLatvanyossagModositas);
+            this.groupBoxLatvanyossagok.Controls.Add(this.nudLatvanyossagAr);
+            this.groupBoxLatvanyossagok.Controls.Add(this.textBoxLeirasModosit);
+            this.groupBoxLatvanyossagok.Controls.Add(this.textBoxNevModosit);
+            this.groupBoxLatvanyossagok.Location = new System.Drawing.Point(446, 255);
+            this.groupBoxLatvanyossagok.Name = "groupBoxLatvanyossagok";
+            this.groupBoxLatvanyossagok.Size = new System.Drawing.Size(309, 145);
+            this.groupBoxLatvanyossagok.TabIndex = 13;
+            this.groupBoxLatvanyossagok.TabStop = false;
+            this.groupBoxLatvanyossagok.Text = "Látványosságok módosítása";
+            this.groupBoxLatvanyossagok.Visible = false;
             // 
             // buttonLatvanyossagModositas
             // 
-            this.buttonLatvanyossagModositas.Location = new System.Drawing.Point(88, 139);
+            this.buttonLatvanyossagModositas.Location = new System.Drawing.Point(88, 116);
             this.buttonLatvanyossagModositas.Name = "buttonLatvanyossagModositas";
             this.buttonLatvanyossagModositas.Size = new System.Drawing.Size(120, 23);
             this.buttonLatvanyossagModositas.TabIndex = 11;
             this.buttonLatvanyossagModositas.Text = "Módosítás";
             this.buttonLatvanyossagModositas.UseVisualStyleBackColor = true;
             this.buttonLatvanyossagModositas.Visible = false;
+            this.buttonLatvanyossagModositas.Click += new System.EventHandler(this.buttonLatvanyossagModositas_Click);
+            // 
+            // nudLatvanyossagAr
+            // 
+            this.nudLatvanyossagAr.Location = new System.Drawing.Point(88, 86);
+            this.nudLatvanyossagAr.Maximum = new decimal(new int[] {
+            80000000,
+            0,
+            0,
+            0});
+            this.nudLatvanyossagAr.Name = "nudLatvanyossagAr";
+            this.nudLatvanyossagAr.Size = new System.Drawing.Size(120, 22);
+            this.nudLatvanyossagAr.TabIndex = 9;
+            this.nudLatvanyossagAr.Visible = false;
+            // 
+            // textBoxLeirasModosit
+            // 
+            this.textBoxLeirasModosit.Location = new System.Drawing.Point(88, 59);
+            this.textBoxLeirasModosit.Name = "textBoxLeirasModosit";
+            this.textBoxLeirasModosit.Size = new System.Drawing.Size(120, 22);
+            this.textBoxLeirasModosit.TabIndex = 8;
+            this.textBoxLeirasModosit.Visible = false;
+            // 
+            // textBoxNevModosit
+            // 
+            this.textBoxNevModosit.Location = new System.Drawing.Point(88, 33);
+            this.textBoxNevModosit.Name = "textBoxNevModosit";
+            this.textBoxNevModosit.Size = new System.Drawing.Size(120, 22);
+            this.textBoxNevModosit.TabIndex = 4;
+            this.textBoxNevModosit.Visible = false;
             // 
             // ButtonModositVarosok
             // 
@@ -274,6 +274,19 @@
             this.buttonModositLatvanyossagok.TabIndex = 15;
             this.buttonModositLatvanyossagok.Text = "Módosít";
             this.buttonModositLatvanyossagok.UseVisualStyleBackColor = true;
+            this.buttonModositLatvanyossagok.Click += new System.EventHandler(this.buttonModositLatvanyossagok_Click);
+            // 
+            // nudVarosLakossag
+            // 
+            this.nudVarosLakossag.Location = new System.Drawing.Point(83, 59);
+            this.nudVarosLakossag.Maximum = new decimal(new int[] {
+            80000000,
+            0,
+            0,
+            0});
+            this.nudVarosLakossag.Name = "nudVarosLakossag";
+            this.nudVarosLakossag.Size = new System.Drawing.Size(120, 22);
+            this.nudVarosLakossag.TabIndex = 15;
             // 
             // Form1
             // 
@@ -301,8 +314,8 @@
             this.groupBoxVarosok.PerformLayout();
             this.groupBoxLatvanyossagok.ResumeLayout(false);
             this.groupBoxLatvanyossagok.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudVarosLakossag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLatvanyossagAr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVarosLakossag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,16 +337,15 @@
         private System.Windows.Forms.Button buttonLatvanyossagTorles;
         private System.Windows.Forms.GroupBox groupBoxVarosok;
         private System.Windows.Forms.Button buttonVarosModosit;
-        private System.Windows.Forms.NumericUpDown nudVarosLakossag;
         private System.Windows.Forms.TextBox textBoxVarosNev;
         private System.Windows.Forms.GroupBox groupBoxLatvanyossagok;
         private System.Windows.Forms.Button buttonLatvanyossagModositas;
-        private System.Windows.Forms.ComboBox comboBoxVarosModosit;
         private System.Windows.Forms.NumericUpDown nudLatvanyossagAr;
         private System.Windows.Forms.TextBox textBoxLeirasModosit;
         private System.Windows.Forms.TextBox textBoxNevModosit;
         private System.Windows.Forms.Button ButtonModositVarosok;
         private System.Windows.Forms.Button buttonModositLatvanyossagok;
+        private System.Windows.Forms.NumericUpDown nudVarosLakossag;
     }
 }
 

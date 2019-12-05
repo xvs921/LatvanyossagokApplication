@@ -19,7 +19,7 @@ namespace LatvanyossagokApplication
         public Form1()
         {
             InitializeComponent();
-            conn = new MySqlConnection("Server=localhost;Port=3307;Database=latvanyossagokdb;Uid=root;Pwd=;");
+            conn = new MySqlConnection("Server=localhost;Port=3306;Database=latvanyossagokdb;Uid=root;Pwd=;");
             conn.Open();
             tablaLetrehozas();
             VarosListazas();
@@ -114,7 +114,7 @@ namespace LatvanyossagokApplication
             cmd.Parameters.AddWithValue("@id", varos.Id);
 
             cmd.ExecuteNonQuery();
-
+            comboBoxVarosok.Items.Clear();
             VarosListazas();
         }
 
@@ -141,13 +141,7 @@ namespace LatvanyossagokApplication
         }
         private void listBoxVarosok_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxVarosok.SelectedIndex == -1)
-            {
-                MessageBox.Show("Nincs kiválasztott város");
-                return;
-            }
             listBoxLatvanyossagok.Items.Clear();
-
             var cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT id,nev,leiras,ar,varos_id FROM latvanyossagok WHERE varos_id=@varos_id ORDER BY cim ";
             var varos = (Varos)listBoxLatvanyossagok.SelectedItem;
@@ -164,7 +158,6 @@ namespace LatvanyossagokApplication
                     var latvanyossag = new Latvanyossag(id, nev, leiras, ar, varos_id);
                     listBoxLatvanyossagok.Items.Add(latvanyossag);
                 }
-
             }
         }
 
@@ -186,15 +179,71 @@ namespace LatvanyossagokApplication
                 LatvanyossagListazas();
             }
 
-        private void ButtonModositVarosok_Click(object sender, EventArgs e)
+        private void ButtonVarosModosit_Click(object sender, EventArgs e)
         {
             listBoxLatvanyossagok.Items.Clear();
+            if (!textBoxVarosNev.Text.Equals(""))
+            {
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "UPDATE varosok SET nev = @nev, lakossag = @lakossag WHERE id = @id";
+                var varos = (Varos)listBoxVarosok.SelectedItem;
+                cmd.Parameters.AddWithValue("@id", varos.Id);
+                cmd.Parameters.AddWithValue("@nev", textBoxVarosNev.Text);
+                cmd.Parameters.AddWithValue("@lakossag", nudVarosLakossag.Value);
+                cmd.ExecuteNonQuery();
+                VarosListazas();
+                LatvanyossagListazas();
+            }
+            else
+            {
+                MessageBox.Show("Nincs valami kitöltve!");
+            }
 
+
+        }
+
+        private void buttonLatvanyossagModositas_Click(object sender, EventArgs e)
+        {
+            if (!textBoxNevModosit.Text.Equals("") && !textBoxLeirasModosit.Text.Equals(""))
+            {
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "UPDATE latvanyossagok SET nev = @nev, leiras = @leiras, ar = @ar WHERE id = @id";
+                var latvanyossag = (Latvanyossag)listBoxLatvanyossagok.SelectedItem;
+                cmd.Parameters.AddWithValue("@id", latvanyossag.Id);
+                cmd.Parameters.AddWithValue("@nev", textBoxNevModosit.Text);
+                cmd.Parameters.AddWithValue("@leiras", textBoxLeirasModosit.Text);
+                cmd.Parameters.AddWithValue("@ar", nudLatvanyossagAr.Value);
+                cmd.ExecuteNonQuery();
+                LatvanyossagListazas();
+            }
+            else
+            {
+                MessageBox.Show("Nincs valami kitöltve!");
+            }
+        }
+
+        private void ButtonModositVarosok_Click(object sender, EventArgs e)
+        {
             groupBoxVarosok.Visible = true;
             textBoxVarosNev.Visible = true;
             nudVarosLakossag.Visible = true;
             buttonVarosModosit.Visible = true;
+            var varos = (Varos)listBoxVarosok.SelectedItem;
+            textBoxVarosNev.Text = varos.Nev;
+            nudVarosLakossag.Value = varos.Lakossag;
+        }
 
+        private void buttonModositLatvanyossagok_Click(object sender, EventArgs e)
+        {
+            groupBoxLatvanyossagok.Visible = true;
+            textBoxNevModosit.Visible = true;
+            textBoxLeirasModosit.Visible = true;
+            nudLatvanyossagAr.Visible = true;
+            buttonLatvanyossagModositas.Visible = true;
+            var latvanyossag = (Latvanyossag)listBoxLatvanyossagok.SelectedItem;
+            textBoxNevModosit.Text = latvanyossag.Nev;
+            textBoxLeirasModosit.Text = latvanyossag.Leiras;
+            nudLatvanyossagAr.Value = latvanyossag.Ar;
         }
     }
  }
