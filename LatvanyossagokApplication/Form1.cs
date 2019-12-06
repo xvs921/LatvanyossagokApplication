@@ -19,7 +19,7 @@ namespace LatvanyossagokApplication
         public Form1()
         {
             InitializeComponent();
-            conn = new MySqlConnection("Server=localhost;Port=3306;Database=latvanyossagokdb;Uid=root;Pwd=;");
+            conn = new MySqlConnection("Server=localhost;Port=3307;Database=latvanyossagokdb;Uid=root;Pwd=;");
             conn.Open();
             tablaLetrehozas();
             VarosListazas();
@@ -139,12 +139,15 @@ namespace LatvanyossagokApplication
 
             }
         }
-        private void listBoxVarosok_SelectedIndexChanged(object sender, EventArgs e)
+
+        void LatvanyossagListazasModositott()
         {
             listBoxLatvanyossagok.Items.Clear();
+            if (listBoxVarosok.SelectedIndex!=-1)
+            {
             var cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT id,nev,leiras,ar,varos_id FROM latvanyossagok WHERE varos_id=@varos_id ORDER BY cim ";
-            var varos = (Varos)listBoxLatvanyossagok.SelectedItem;
+            cmd.CommandText = "SELECT id,nev,leiras,ar,varos_id FROM latvanyossagok WHERE varos_id=@varos_id ORDER BY nev ";
+            var varos = (Varos)listBoxVarosok.SelectedItem;
             cmd.Parameters.AddWithValue("@varos_id", varos.Id);
             using (var reader = cmd.ExecuteReader())
             {
@@ -159,6 +162,12 @@ namespace LatvanyossagokApplication
                     listBoxLatvanyossagok.Items.Add(latvanyossag);
                 }
             }
+
+            }
+        }
+        private void listBoxVarosok_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LatvanyossagListazasModositott();
         }
 
         private void buttonLatvanyossagTorles_Click(object sender, EventArgs e)
