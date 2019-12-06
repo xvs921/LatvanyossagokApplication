@@ -51,24 +51,34 @@
             this.textBoxNevModosit = new System.Windows.Forms.TextBox();
             this.ButtonModositVarosok = new System.Windows.Forms.Button();
             this.buttonModositLatvanyossagok = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudLakossag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAr)).BeginInit();
             this.groupBoxVarosok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVarosLakossag)).BeginInit();
             this.groupBoxLatvanyossagok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLatvanyossagAr)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNev
             // 
-            this.textBoxNev.Location = new System.Drawing.Point(30, 27);
+            this.textBoxNev.Location = new System.Drawing.Point(32, 32);
             this.textBoxNev.Name = "textBoxNev";
             this.textBoxNev.Size = new System.Drawing.Size(120, 20);
             this.textBoxNev.TabIndex = 0;
             // 
             // nudLakossag
             // 
-            this.nudLakossag.Location = new System.Drawing.Point(30, 67);
+            this.nudLakossag.Location = new System.Drawing.Point(32, 73);
             this.nudLakossag.Maximum = new decimal(new int[] {
             80000000,
             0,
@@ -80,7 +90,7 @@
             // 
             // btnVarosHozzaad
             // 
-            this.btnVarosHozzaad.Location = new System.Drawing.Point(30, 111);
+            this.btnVarosHozzaad.Location = new System.Drawing.Point(32, 112);
             this.btnVarosHozzaad.Name = "btnVarosHozzaad";
             this.btnVarosHozzaad.Size = new System.Drawing.Size(120, 23);
             this.btnVarosHozzaad.TabIndex = 2;
@@ -90,14 +100,14 @@
             // 
             // textBoxLatvanyossagNev
             // 
-            this.textBoxLatvanyossagNev.Location = new System.Drawing.Point(195, 27);
+            this.textBoxLatvanyossagNev.Location = new System.Drawing.Point(24, 32);
             this.textBoxLatvanyossagNev.Name = "textBoxLatvanyossagNev";
             this.textBoxLatvanyossagNev.Size = new System.Drawing.Size(120, 20);
             this.textBoxLatvanyossagNev.TabIndex = 3;
             // 
             // nudAr
             // 
-            this.nudAr.Location = new System.Drawing.Point(195, 85);
+            this.nudAr.Location = new System.Drawing.Point(24, 112);
             this.nudAr.Maximum = new decimal(new int[] {
             80000000,
             0,
@@ -109,7 +119,7 @@
             // 
             // btnLatvanyossagHozzaad
             // 
-            this.btnLatvanyossagHozzaad.Location = new System.Drawing.Point(195, 142);
+            this.btnLatvanyossagHozzaad.Location = new System.Drawing.Point(24, 183);
             this.btnLatvanyossagHozzaad.Name = "btnLatvanyossagHozzaad";
             this.btnLatvanyossagHozzaad.Size = new System.Drawing.Size(120, 23);
             this.btnLatvanyossagHozzaad.TabIndex = 5;
@@ -120,14 +130,14 @@
             // comboBoxVarosok
             // 
             this.comboBoxVarosok.FormattingEnabled = true;
-            this.comboBoxVarosok.Location = new System.Drawing.Point(195, 111);
+            this.comboBoxVarosok.Location = new System.Drawing.Point(24, 151);
             this.comboBoxVarosok.Name = "comboBoxVarosok";
             this.comboBoxVarosok.Size = new System.Drawing.Size(120, 21);
             this.comboBoxVarosok.TabIndex = 6;
             // 
             // textBoxLatvanyossagAr
             // 
-            this.textBoxLatvanyossagAr.Location = new System.Drawing.Point(195, 53);
+            this.textBoxLatvanyossagAr.Location = new System.Drawing.Point(24, 71);
             this.textBoxLatvanyossagAr.Name = "textBoxLatvanyossagAr";
             this.textBoxLatvanyossagAr.Size = new System.Drawing.Size(120, 20);
             this.textBoxLatvanyossagAr.TabIndex = 7;
@@ -287,9 +297,97 @@
             this.buttonModositLatvanyossagok.UseVisualStyleBackColor = true;
             this.buttonModositLatvanyossagok.Click += new System.EventHandler(this.buttonModositLatvanyossagok_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(71, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Név";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Leírás";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Név";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Lakosság";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxNev);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.nudLakossag);
+            this.groupBox1.Controls.Add(this.btnVarosHozzaad);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(177, 162);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Városok hozzáadása";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.textBoxLatvanyossagNev);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.textBoxLatvanyossagAr);
+            this.groupBox2.Controls.Add(this.nudAr);
+            this.groupBox2.Controls.Add(this.comboBoxVarosok);
+            this.groupBox2.Controls.Add(this.btnLatvanyossagHozzaad);
+            this.groupBox2.Location = new System.Drawing.Point(195, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 212);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Látványosságok hozzáadása";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Ár";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(60, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Város";
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(904, 474);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonModositLatvanyossagok);
             this.Controls.Add(this.ButtonModositVarosok);
             this.Controls.Add(this.groupBoxLatvanyossagok);
@@ -298,14 +396,6 @@
             this.Controls.Add(this.buttonVarosTorles);
             this.Controls.Add(this.listBoxLatvanyossagok);
             this.Controls.Add(this.listBoxVarosok);
-            this.Controls.Add(this.textBoxLatvanyossagAr);
-            this.Controls.Add(this.comboBoxVarosok);
-            this.Controls.Add(this.btnLatvanyossagHozzaad);
-            this.Controls.Add(this.nudAr);
-            this.Controls.Add(this.textBoxLatvanyossagNev);
-            this.Controls.Add(this.btnVarosHozzaad);
-            this.Controls.Add(this.nudLakossag);
-            this.Controls.Add(this.textBoxNev);
             this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.nudLakossag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAr)).EndInit();
@@ -315,8 +405,11 @@
             this.groupBoxLatvanyossagok.ResumeLayout(false);
             this.groupBoxLatvanyossagok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLatvanyossagAr)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -345,6 +438,14 @@
         private System.Windows.Forms.Button ButtonModositVarosok;
         private System.Windows.Forms.Button buttonModositLatvanyossagok;
         private System.Windows.Forms.NumericUpDown nudVarosLakossag;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 

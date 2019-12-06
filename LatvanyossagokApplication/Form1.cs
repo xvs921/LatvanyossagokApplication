@@ -82,6 +82,7 @@ namespace LatvanyossagokApplication
         void VarosListazas()
         {
             listBoxVarosok.Items.Clear();
+            comboBoxVarosok.Items.Clear();
 
             var cmd = conn.CreateCommand();
             cmd.CommandText = "SELECT id,nev,lakossag FROM varosok ORDER BY nev";
